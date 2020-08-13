@@ -1,0 +1,16 @@
+@keyframes fadein {
+    from {
+        transform: scale(1.6);
+        opacity: 0;
+
+
+    }
+    to {
+        transform: scale(1.0);
+        opacity: 1;
+    }
+}
+
+#id{
+    font-family: Georgia, serif;
+}

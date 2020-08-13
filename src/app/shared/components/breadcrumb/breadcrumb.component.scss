@@ -1,0 +1,30 @@
+.breadcrumb {
+    height: 28px;
+
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+
+        height: 28px;
+        line-height: 28px;
+
+        font-size: 14px;
+
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        padding-right: 8px;
+    }
+
+    li:hover {
+        text-decoration: underline;
+    }
+
+
+}

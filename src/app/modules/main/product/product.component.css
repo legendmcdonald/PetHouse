@@ -1,0 +1,45 @@
+.app-product {
+  position: relative;
+  padding: 80px 0 32px 0;
+}
+.app-product > div {
+  padding: 0 32px 0 32px;
+}
+.app-product .general {
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.app-product .general .title {
+  font-size: 52px;
+  font-weight: bold;
+}
+.app-product .general .buy {
+  margin-left: auto;
+}
+.app-product .price {
+  height: 64px;
+  font-size: 32px;
+  font-family: Georgia;
+}
+.app-product .type {
+  font-size: 32px;
+  font-weight: lighter;
+  font-family: "American Typewriter";
+}
+
+.app-product-img {
+  z-index: 10;
+}
+.app-product-img img {
+  animation: slideDown 1s;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transition: all 0.2s;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+/*# sourceMappingURL=product.component.css.map */

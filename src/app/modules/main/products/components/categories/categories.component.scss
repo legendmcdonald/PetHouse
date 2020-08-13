@@ -1,0 +1,82 @@
+.app-products-categories {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+
+
+    overflow-y: auto;
+    font-family: Georgia, serif;
+
+    .close {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+    }
+
+    .header {
+        text-align: center;
+        padding: 32px;
+
+        font-size: 48px;
+    }
+
+    .albums {
+        position: absolute;
+        bottom: 32px;
+        left: 32px;
+        font-size: 56px;
+        color: rgba(255, 255, 255, 0.3);
+
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+
+        $base-duration: 0.1;
+        $elements: 20;
+        @for $i from 0 to $elements {
+            div:nth-child(#{$i + 1}) {
+                animation-delay: $base-duration + s;
+                $base-duration: $base-duration + 0.1;
+            }
+        }
+
+        div {
+            cursor: pointer;
+            padding: 16px 0;
+            transition: 1s ease-in-out;
+            font-size: xx-large;
+            font-weight: lighter;
+            text-align: center;
+            width: 100%;
+            animation: slideDown .3s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+
+            span {
+                display: inline-block;
+
+            }
+        }
+
+        div:hover {
+            background-image: radial-gradient(
+                    rgba(0, 0, 0, 0.10),
+                    rgba(0, 0, 0, 0.10),
+                    rgba(0, 0, 0, 0.10));
+        }
+    }
+}
+
+
+
+

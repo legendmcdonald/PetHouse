@@ -1,0 +1,13 @@
+.app-rating {
+  display: flex;
+  align-items: center;
+}
+.app-rating .app-rating-voters {
+  padding-left: 16px;
+  font-size: 18px;
+}
+.app-rating .star {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=rating.component.css.map */

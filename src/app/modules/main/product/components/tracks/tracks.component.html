@@ -1,0 +1,38 @@
+<mat-table [dataSource]="dataSource" class="mat-table-content mat-row-hover" style="padding-top: 8px">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> #</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <mat-icon>music_note</mat-icon>
+            <strong> {{element.name}} </strong>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="duration">
+        <mat-header-cell *matHeaderCellDef> Duration</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <app-duration [value]="element.duration"></app-duration>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="play">
+        <mat-header-cell *matHeaderCellDef> File</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="mat-column-end">
+            <button mat-icon-button (click)="play(element)">
+                <mat-icon>play_arrow</mat-icon>
+            </button>
+
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+        <mat-header-cell *matHeaderCellDef> Created</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.createdAt}} </mat-cell>
+    </ng-container>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

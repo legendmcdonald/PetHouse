@@ -1,0 +1,14 @@
+.app-rating {
+    display: flex;
+    align-items: center;
+
+
+    .app-rating-voters {
+        padding-left: 16px;
+        font-size: 18px;
+    }
+
+    .star {
+        cursor: pointer;
+    }
+}

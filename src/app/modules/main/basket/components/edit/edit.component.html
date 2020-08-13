@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Edit</h2>
+<app-alert *ngIf="error != null" [value]="error"></app-alert>
+<mat-dialog-content [formGroup]="form">
+    <div fxLayout="row">
+        <mat-form-field fxFlex="1 1 100%">
+            <input matInput maxlength="255" placeholder="Count" [formControl]="form.controls.count">
+            <mat-error *ngIf="form.controls.count.hasError('required') ||
+               form.controls.count.hasError('minlength')">required
+            </mat-error>
+        </mat-form-field>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button type="button" class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()" [disabled]="working">
+        <span *ngIf="!working">Save</span>
+        <mat-spinner diameter="20" *ngIf="working" style="margin: auto;"></mat-spinner>
+    </button>
+</mat-dialog-actions>

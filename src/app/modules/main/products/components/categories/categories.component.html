@@ -1,0 +1,31 @@
+<div class="app-products-categories" [@flip3DAnimation]="getShowState()">
+    <div class="app-products-categories" *ngIf="visible">
+        <div class="header">
+            <span>Choose category</span>
+        </div>
+        <div class="close">
+            <button mat-icon-button (click)="hide()">
+                <mat-icon class="mat-36">close</mat-icon>
+            </button>
+        </div>
+        <div class="menu-items">
+            <div *ngFor="let element of categories" (click)="changeCategory(element)"
+                 (mouseenter)="mouseEnter(element)"
+                 (mouseleave)="mouseLeave(element)"
+
+            >
+                <span [style.transform]="getScale(element)">{{element.name}}</span>
+            </div>
+        </div>
+        <div class="albums">
+            <span *ngIf="albums >= 0">{{albums}} albums</span>
+        </div>
+    </div>
+    <svg class="svg-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" preserveAspectRatio="none">
+        <path fill="#263238" d="M0 640L640 640L640 0L0 0L0 640Z" id="e89g0SAg0"></path>
+        <path fill="#37474f"
+            d="M640 0L640 640C640 640 640 640 640 640C556.88 569.4 444.43 544.01 339.04 572.05C282.55 587.07 244.42 597.33 224.63 602.83C181.33
+             614.86 159.67 533.04 126.33 510C89.49 484.54 1.08 505.26 0.98 455.59C0.85 394.84 0.52 242.98 0 0"
+            id="c6mAYq0qG"></path>
+    </svg>
+</div>

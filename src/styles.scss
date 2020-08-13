@@ -1,0 +1,389 @@
+h1 {
+    color: black;
+    text-align: left;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: #37474f;
+    text-decoration: none;
+}
+
+/* Theme */
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config(
+    $font-family: 'Josefin Sans'
+);
+@include mat-core($custom-typography);
+
+$my-app-primary: mat-palette($mat-light-green, 800);
+$my-app-accent: mat-palette($mat-deep-orange, 800);
+$my-app-warn: mat-palette($mat-deep-orange);
+
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+@include angular-material-theme($my-app-theme);
+
+
+/* Material styles */
+.mat-toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-column-end {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+.mat-stepper-horizontal {
+    background-color: transparent;
+}
+
+/* App styles */
+.app-toolbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.app-content {
+    position: fixed;
+    top: 0;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Page styles */
+.page-content {
+    padding: 0 16px;
+    margin-top: 80px;
+}
+
+.page-table {
+    height: calc(100vh - 172px);
+}
+
+.page-table-pagination {
+    height: calc(100vh - 252px);
+    overflow-y: auto;
+}
+
+.page-toolbar {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+
+/* Extra */
+.mat-toolbar {
+    background-color: transparent;
+}
+
+// Font styles
+.font-smaller {
+    font-size: smaller;
+}
+
+.font-small {
+    font-size: small;
+}
+
+.font-medium {
+    font-size: medium;
+}
+
+.font-large {
+    font-size: large;
+}
+
+.font-larger {
+    font-size: larger;
+}
+
+.font-x-larger {
+    font-size: x-large;
+}
+
+// Material icons
+.material-icons.mat-14 {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+.material-icons.mat-18 {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.material-icons.mat-24 {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.material-icons.mat-36 {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+}
+.material-icons.mat-36:hover{
+    color: grey;
+}
+
+.material-icons.mat-48 {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+}
+
+.material-icons.mat-56 {
+    font-size: 56px;
+    width: 56px;
+    height: 56px;
+}
+
+.material-icons.mat-72 {
+    font-size: 72px;
+    width: 72px;
+    height: 72px;
+}
+
+.material-icons.mat-92 {
+    font-size: 92px;
+    width: 92px;
+    height: 92px;
+}
+
+// Mat header slider
+@keyframes MatHeaderSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mat-header-row .mat-header-cell {
+    animation: MatHeaderSlideIn 0.2s linear;
+    animation-fill-mode: both;
+}
+
+.mat-header-row .mat-header-cell:nth-child(1) {
+    animation-delay: .1s
+}
+
+.mat-header-row .mat-header-cell:nth-child(2) {
+    animation-delay: .2s
+}
+
+.mat-header-row .mat-header-cell:nth-child(3) {
+    animation-delay: .3s
+}
+
+.mat-header-row .mat-header-cell:nth-child(4) {
+    animation-delay: .4s
+}
+
+.mat-header-row .mat-header-cell:nth-child(5) {
+    animation-delay: .5s
+}
+
+.mat-header-row .mat-header-cell:nth-child(6) {
+    animation-delay: .6s
+}
+
+.mat-table {
+    background-color: transparent;
+}
+
+.mat-paginator {
+    background-color: transparent;
+}
+
+.mat-row {
+    opacity: 0;
+    animation: MatRowSlideIn 1s;
+    animation-fill-mode: forwards;
+}
+
+.mat-table .mat-row:nth-child(1) {
+    animation-delay: .1s
+}
+
+
+.mat-table .mat-row:nth-child(2) {
+    animation-delay: .2s
+}
+
+.mat-table .mat-row:nth-child(3) {
+    animation-delay: .3s
+}
+
+.mat-table .mat-row:nth-child(4) {
+    animation-delay: .4s
+}
+
+.mat-table .mat-row:nth-child(5) {
+    animation-delay: .5s
+}
+
+.mat-table .mat-row:nth-child(6) {
+    animation-delay: .6s
+}
+
+.mat-table .mat-row:nth-child(7) {
+    animation-delay: .7s
+}
+
+.mat-table .mat-row:nth-child(8) {
+    animation-delay: .8s
+}
+
+.mat-table .mat-row:nth-child(9) {
+    animation-delay: .9s
+}
+
+.mat-table .mat-row:nth-child(10) {
+    animation-delay: 1.0s
+}
+
+.mat-table .mat-row:nth-child(11) {
+    animation-delay: .1s
+}
+
+.mat-table .mat-row:nth-child(12) {
+    animation-delay: .2s
+}
+
+.mat-table .mat-row:nth-child(13) {
+    animation-delay: .3s
+}
+
+.mat-row:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+.biggest-size-text{
+    font-size: 24px;
+    padding-top: 8px;
+}
+.bigger-size-text{
+    font-size: 20px;
+}
+.small-size-text{
+    font-size: 15px;
+}
+.end-size-text{
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+@media (max-width: 699px) {
+    .svg--lg {
+        display: none;
+    }
+}
+
+@media (min-width: 700px) {
+    .svg--sm {
+        display: none;
+    }
+}
+
+/* Animations */
+@keyframes MatRowSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(1.6);
+        opacity: 0;
+
+    }
+    to {
+        transform: scale(1.0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: scale(1.6);
+        opacity: 0;
+
+    }
+    to {
+        transform: scale(1.0);
+        opacity: 1;
+    }
+}
+
+@keyframes flip3D {
+    from {
+        transform: rotateY(180deg);
+
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+/* SVG */
+.svg-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

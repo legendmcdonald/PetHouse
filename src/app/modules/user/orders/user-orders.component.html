@@ -1,0 +1,61 @@
+<div class="page-content">
+    <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <div class="page-toolbar">
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <span class="font-larger">Orders</span>
+                <span class="mat-toolbar-spacer"></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+    <mat-table [dataSource]="dataSource" class="mat-table">
+        <ng-container matColumnDef="select">
+            <mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null"
+                              [checked]="selection.hasValue() && isAllSelected()"
+                              [indeterminate]="selection.hasValue() && !isAllSelected()">
+                </mat-checkbox>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)">
+                </mat-checkbox>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> #</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="created_at">
+            <mat-header-cell *matHeaderCellDef class="bigger-size-text"> Created</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="small-size-text"><strong>{{element.createdAt}} </strong></mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="pets">
+            <mat-header-cell *matHeaderCellDef class="bigger-size-text"> Pets</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="small-size-text"> {{element.pets}}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef class="bigger-size-text"> Price</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="small-size-text"> {{element.price}} kr
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef class="bigger-size-text"> Status</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="small-size-text"> {{element.statusToString()}}
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+
+
+

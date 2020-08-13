@@ -1,0 +1,37 @@
+<div class="app-products-container">
+    <app-products-categories (categoryChanged)="categoryChanged($event)"></app-products-categories>
+
+    <div (window:resize)="onResize($event)" class="app-products">
+        <mat-grid-list [gutterSize]="1" [cols]="columns" class="app-products-list"
+                       rowHeight="{{getRowHeight()}}">
+
+            <mat-grid-tile *ngFor="let element of products" class="app-products-product"
+                           [rowspan]="getRowSpan(element)"
+                           [colspan]="getColumnSpan(element)">
+                <div class="app-products-product" (click)="navigate(element)">
+                    <div class="app-product-top">
+                        {{element.price}} kr
+                    </div>
+
+                    <div class="app-product-title">
+                        <div class="title">
+                            <div class="name">{{element.name}}</div>
+                            <div class="type">{{element.type}}</div>
+                            <div class="buy">
+                                <button mat-flat-button color="primary" (click)="navigate(element)">
+                                    SHOP NOW
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="app-product-bottom">
+                    </div>
+                    <img [lazyLoad]="element.cover" [style.height]="getRowHeight()" alt="">
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+</div>
+<app-footer></app-footer>

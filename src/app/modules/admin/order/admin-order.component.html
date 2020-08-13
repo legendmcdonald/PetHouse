@@ -1,0 +1,16 @@
+<div class="page-content">
+    <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <div class="page-toolbar">
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <span class="font-larger">{{ order.createdAt }}</span>
+                <span class="mat-toolbar-spacer"></span>>
+                <button mat-icon-button (click)="openStatusComponent()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+
+    <app-admin-order-details [orderId]="order.id"></app-admin-order-details>
+</div>

@@ -1,0 +1,63 @@
+<div class="page-content">
+    <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <mat-toolbar class="toolbar-header">
+        <mat-toolbar-row>
+            <span class="font-larger">Your Address</span>
+            <span class="mat-toolbar-spacer"></span>
+            <button mat-flat-button (click)="navigateHome()">
+                <mat-icon class="mat-36">arrow_back</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <form novalidate (ngSubmit)="save()">
+        <div style="padding: 16px">
+            <div fxLayout="row">
+                <mat-form-field fxFlex="1 1 100%">
+                    <input matInput maxlength="255" placeholder="City" [formControl]="form.controls.city">
+                    <mat-error *ngIf="form.controls.city.hasError('required') ||
+               form.controls.city.hasError('minlength')">required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row">
+                <mat-form-field fxFlex="1 1 100%">
+                    <input matInput maxlength="255" placeholder="Postal Number"
+                           [formControl]="form.controls.postalNumber">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row">
+                <mat-form-field fxFlex="1 1 100%">
+                    <input matInput maxlength="255" placeholder="Street"
+                           [formControl]="form.controls.street">
+                </mat-form-field>
+            </div>
+          <div fxLayout="row">
+            <mat-form-field fxFlex="1 1 100%">
+              <input matInput maxlength="255" placeholder="Phone Number"
+                     [formControl]="form.controls.phoneNumber">
+            </mat-form-field>
+          </div>
+          <div fxLayout="row">
+            <mat-form-field fxFlex="1 1 100%">
+              <input matInput maxlength="255" placeholder="Email"
+                     [formControl]="form.controls.email">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div style="padding: 16px">
+            <button type="submit" class="mat-raised-button mat-primary" (click)="save()" [disabled]="working">
+                <span *ngIf="!working">Save</span>
+                <mat-spinner diameter="20" *ngIf="working" style="margin: auto;"></mat-spinner>
+            </button>
+        </div>
+    </form>
+
+</div>
+
+
+
+
+
+

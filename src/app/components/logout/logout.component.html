@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Logout</h2>
+<app-alert *ngIf="error != null" [value]="error"></app-alert>
+<form novalidate (ngSubmit)="logout()">
+    <mat-dialog-content>
+        Are you sure to logout
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button type="button" class="mat-raised-button" (click)="close()">Close</button>
+        <button type="submit" class="mat-raised-button mat-warn" (click)="logout()" [disabled]="working">
+            <span *ngIf="!working">Logout</span>
+            <mat-spinner diameter="20" *ngIf="working" style="margin: auto;"></mat-spinner>
+        </button>
+    </mat-dialog-actions>
+</form>

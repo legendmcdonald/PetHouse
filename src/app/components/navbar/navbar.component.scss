@@ -1,0 +1,67 @@
+.app-navbar {
+    filter: none;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+        margin-left: 32px;
+
+        display: flex;
+        align-items: center;
+
+        * {
+            cursor: pointer;
+        }
+    }
+
+    .option {
+        padding-left: 16px;
+        font-size: 20px;
+    }
+
+    .right {
+        margin-right: 32px;
+    }
+
+    .search {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 0 7px 0 32px;
+            font-size: 1.714rem;
+            box-sizing: border-box;
+            font-weight: 300;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 32px;
+            cursor: pointer;
+
+        }
+    }
+
+    transition: all .2s;
+}
+
+.app-navbar-dark {
+    background: linear-gradient(to bottom, #fff 10%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+.app-navbar-title {
+    font-family: 'Arvo', fantasy;
+    font-size: 32px;
+    font-weight: bold;
+}
+

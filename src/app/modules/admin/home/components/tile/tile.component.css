@@ -1,0 +1,24 @@
+.app-admin-tile-card {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.app-admin-tile-card:hover {
+  color: white;
+}
+.app-admin-tile-card:hover ul li .mat-icon {
+  color: white;
+}
+
+.app-admin-tile-content {
+  margin: 8px;
+  height: 100%;
+  max-height: 180px;
+}
+
+/*# sourceMappingURL=tile.component.css.map */

@@ -1,0 +1,81 @@
+<mat-toolbar class="toolbar-header">
+    <mat-toolbar-row>
+        <span class="font-large">Tracks</span>
+        <span class="mat-toolbar-spacer"></span>
+        <button mat-flat-button color="primary" (click)="openAddDialog()">
+            <mat-icon class="mat-36">add</mat-icon>
+            <span class="biggest-size-text">Add</span>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-table [dataSource]="dataSource" class="mat-table-content">
+    <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> #</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef class="bigger-size-text"> Name</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="small-size-text"><strong> {{element.name}} </strong>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="duration">
+        <mat-header-cell *matHeaderCellDef class="bigger-size-text"> Duration</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="small-size-text">
+            <app-duration [value]="element.duration"></app-duration>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sample">
+        <mat-header-cell *matHeaderCellDef class="bigger-size-text"> Sample</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="small-size-text">
+            <a *ngIf="element.sample" href="{{element.sample}}" download="{{element.name}}">
+                <mat-icon>music_note
+                </mat-icon>
+            </a></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+        <mat-header-cell *matHeaderCellDef class="bigger-size-text"> Created</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="small-size-text"> {{element.createdAt}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element" class="mat-column-end">
+            <button mat-icon-button [matMenuTriggerFor]="userMenu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #userMenu="matMenu">
+                <button mat-menu-item (click)="openTrackUploadComponent(element)">
+                    <mat-icon color="primary">cloud</mat-icon>
+                    <span class="bigger-size-text">Upload</span>
+                </button>
+                <button mat-menu-item (click)="openTrackDeleteComponent(element)">
+                    <mat-icon color="warn">delete</mat-icon>
+                    <span class="bigger-size-text">Delete</span>
+                </button>
+            </mat-menu>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

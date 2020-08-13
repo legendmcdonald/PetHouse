@@ -1,0 +1,23 @@
+<div class="page-content">
+    <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    <mat-toolbar class="toolbar-header">
+        <mat-toolbar-row>
+            <span class="font-larger">Welcome {{authenticationService.getName()}}!</span>
+            <span class="mat-toolbar-spacer"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-grid-list cols="3" rowHeight="240px" class="app-user-tiles">
+        <mat-grid-tile *ngFor="let element of items"
+                       [colspan]="element.cols"
+                       [rowspan]="element.rows"
+        >
+            <app-user-tile
+                [color]="element.color"
+                [text]="element.text"
+                [icon]="element.icon"
+                [url]="element.url"
+                style="width: 100%;"
+            ></app-user-tile>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

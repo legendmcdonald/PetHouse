@@ -1,0 +1,32 @@
+<div class="app-product" (window:resize)="onResize($event)" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px">
+    <div fxFlex="1 1 100%">
+        <div class="general">
+            <span class="title">{{ product.name }}</span>
+
+            <span class="buy">
+                    <button mat-flat-button color="primary" (click)="buy()">
+                        <mat-icon>add_shopping_cart</mat-icon>
+                    </button>
+                </span>
+        </div>
+
+      <div class="type">
+        <span>{{ product.type }}</span>
+      </div>
+
+        <div class="price">
+            <span>{{ product.price }} kr</span>
+        </div>
+        <app-main-product-tracks [productId]="product.id"></app-main-product-tracks>
+    </div>
+
+    <div fxFlex="1 1 100%">
+        <div class="app-product-img" *ngIf="product != null">
+            <img *ngIf="product.cover != null" [lazyLoad]="product.cover" width="{{imageWidth}}">
+        </div>
+
+    </div>
+
+</div>
+<app-main-product-info [product]="product"></app-main-product-info>
+<app-footer></app-footer>

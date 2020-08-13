@@ -1,0 +1,67 @@
+<h2 mat-dialog-title>Filter</h2>
+<app-alert *ngIf="error != null" [value]="error"></app-alert>
+<form novalidate (ngSubmit)="save()">
+    <mat-dialog-content [formGroup]="form">
+        <div fxLayout="row">
+            <mat-form-field fxFlex="1 1 100%">
+                <mat-select [formControl]="form.controls.filter">
+                    <mat-option [value]="0">-</mat-option>
+                    <mat-option [value]="1">Price</mat-option>
+                    <mat-option [value]="2">Year</mat-option>
+                    <mat-option [value]="3">Rating</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row">
+            <mat-form-field fxFlex="1 1 100%">
+                <mat-select [formControl]="form.controls.operation" (selectionChange)="selectionChange()">
+                    <mat-option [value]="0">equals</mat-option>
+                    <mat-option [value]="1">greater than</mat-option>
+                    <mat-option [value]="2">less than</mat-option>
+                    <mat-option [value]="3">range</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" *ngIf="!this.showRange">
+            <mat-form-field fxFlex="1 1 100%">
+                <input matInput maxlength="255" placeholder="Value"
+                       [formControl]="form.controls.value">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="8px" *ngIf="this.showRange">
+            <mat-form-field fxFlex="1 1 100%">
+                <input matInput maxlength="255" placeholder="Min"
+                       [formControl]="form.controls.fromValue">
+            </mat-form-field>
+            <mat-form-field fxFlex="1 1 100%">
+                <input matInput maxlength="255" placeholder="Max"
+                       [formControl]="form.controls.toValue">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row">
+            <mat-form-field fxFlex="1 1 100%">
+                <mat-select [formControl]="form.controls.sortField" placeholder="Sort Field">
+                    <mat-option [value]="0">-</mat-option>
+                    <mat-option [value]="1">Price</mat-option>
+                    <mat-option [value]="2">Year</mat-option>
+                    <mat-option [value]="3">Rating</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row">
+            <mat-form-field fxFlex="1 1 100%">
+                <mat-select [formControl]="form.controls.sortType">
+                    <mat-option value="asc">Ascending</mat-option>
+                    <mat-option value="desc">Descending</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button type="button" class="mat-raised-button" (click)="close()">Close</button>
+        <button type="submit" class="mat-raised-button mat-primary" (click)="save()" [disabled]="working">
+            <span *ngIf="!working">Filter</span>
+            <mat-spinner diameter="20" *ngIf="working" style="margin: auto;"></mat-spinner>
+        </button>
+    </mat-dialog-actions>
+</form>

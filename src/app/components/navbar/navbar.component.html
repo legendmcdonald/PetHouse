@@ -1,0 +1,60 @@
+<div *ngIf="visible" [className]="'app-navbar ' + getClass()" [style.color]="fontColor">
+    <div class="title">
+        <span [routerLink]="['/']" class="app-navbar-title"><img src="../../../assets/images/pethouse.png"
+                                                                   height="50" width="80"/></span>
+
+        <div class="option">
+            <span [routerLink]="['/products']">Pets</span>
+        </div>
+    </div>
+
+    <div class="right">
+        <button mat-icon-button *ngIf="productsPage" (click)="openSearch()"  matTooltip="Products Search">
+            <mat-icon>search</mat-icon>
+        </button>
+        <button mat-icon-button *ngIf="productsPage" (click)="openCategories()" matTooltip="Products Categories">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <button style="margin-right: 8px" mat-raised-button matTooltip="Signup" (click)="openRegisterComponent()"
+                *ngIf="!authenticationService.isAuthenticated()">
+            Register
+        </button>
+
+        <button mat-raised-button matTooltip="Login" (click)="openLoginComponent()"
+                *ngIf="!authenticationService.isAuthenticated()">
+            Login
+        </button>
+
+
+        <button mat-icon-button *ngIf="authenticationService.isUser()" (click)="navigateBasket()">
+            <mat-icon matBadge="{{getBasketTotal()}}" matBadgeColor="primary">
+                shopping_cart
+            </mat-icon>
+        </button>
+
+        <button mat-icon-button [matMenuTriggerFor]="clientEditMenu"
+                *ngIf="authenticationService.isAuthenticated()">
+            <mat-icon>person</mat-icon>
+        </button>
+
+        <mat-menu #clientEditMenu="matMenu">
+            <button mat-menu-item (click)="navigateMyAccount()">
+                <mat-icon>account_circle</mat-icon>
+                <span>My Account</span>
+            </button>
+
+            <button mat-menu-item (click)="openLogoutComponent()">
+                <mat-icon>exit_to_app</mat-icon>
+                Logout
+            </button>
+        </mat-menu>
+
+        <div *ngIf="searchEnabled" class="search">
+            <input autocomplete="off" placeholder="Search" type="text" (input)="onSearchChange($event.target.value)">
+            <span (click)="closeSearch()" class="close">
+            <mat-icon>close</mat-icon>
+        </span>
+        </div>
+    </div>
+</div>

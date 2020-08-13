@@ -1,0 +1,20 @@
+@keyframes showTile {
+    0% {
+        opacity: 1;
+        transform: scale(0, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+.app-admin-tiles {
+    padding: 8px;
+}
+
+.app-admin-tile {
+    animation: showTile 0.3s cubic-bezier(.33,.04,.72,.45);
+    animation-fill-mode: both;
+}
+

@@ -1,0 +1,8 @@
+<mat-card class="app-admin-tile-card" [style.background-color]="backgroundColor" (click)="navigate()" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <ul style="list-style-type:none; padding: 0; text-align: center;">
+        <li><span class="font-larger" style="padding-bottom: 16px">{{text}}</span></li>
+        <li>
+            <mat-icon class="mat-92" [style.color]="iconColor">{{ icon }}</mat-icon>
+        </li>
+    </ul>
+</mat-card>

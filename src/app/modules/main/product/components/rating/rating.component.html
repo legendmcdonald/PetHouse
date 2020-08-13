@@ -1,0 +1,10 @@
+<div class="app-rating">
+    <mat-icon *ngFor="let elem of stars" class="star"
+              [style.color]="elem.rated? '#ffd740': '#fff'"
+              (click)="setUserRating(elem)"
+              (mouseleave)="mouseLeave(elem)"
+              (mouseover)="mouseOver(elem)"
+    >star_rate</mat-icon>
+
+    <span *ngIf="voters != null" class="app-rating-voters" ><app-counter [value]="voters"></app-counter> voters</span>
+</div>

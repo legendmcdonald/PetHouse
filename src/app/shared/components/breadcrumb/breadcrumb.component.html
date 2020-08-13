@@ -1,0 +1,11 @@
+<mat-toolbar class="breadcrumb">
+    <ul>
+        <li *ngFor='let item of _breadcrumbs'>
+            <span (click)="navigate(item)" routerLinkActive='active'><span *ngIf="!item.home"> > </span> {{ item.label }}
+                <mat-icon *ngIf="item.home" (click)="navigate($event)">home</mat-icon>
+            </span>
+        </li>
+    </ul>
+</mat-toolbar>
+
+
