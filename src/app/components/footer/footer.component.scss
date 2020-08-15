@@ -1,13 +1,14 @@
 .app-footer{
     width: 100%;
     position: relative;
-    height: 16em;
+    height: 14em;
     color: #ffffff;
     display: flex;
-  background: #2b2a2a;
+    background-color: rgb(197, 32, 32);
+
 
     .app-footer-content {
-        osition: relative;
+        position: relative;
         width: 100%;
         align-self: center;
         text-align: center;
@@ -24,12 +25,14 @@
 
         }
 
+            
+
         .app-footer-info {
             display: flex;
             flex: 1;
             flex-direction: row;
             flex-wrap: wrap;
-            margin: 32px 32px 0 32px;
+            margin: 32px 32px 0px 32px;
 
             font-size: 14px;
 
@@ -38,11 +41,15 @@
                 display: flex;
                 flex-direction: column;
 
+               
+
                 span {
                     padding: 12px;
                 }
             }
         }
+
+        
     }
 
 }
