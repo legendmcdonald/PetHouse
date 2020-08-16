@@ -38,7 +38,7 @@ export class ProductComponent implements OnInit {
 
     buy() {
         if (this.authenticationService.isAdmin()) {
-            alert('Login as user to be able to buy');
+            alert('Login as user to purchase!');
             return;
         }
         if (!this.authenticationService.isAuthenticated()) {

@@ -21,7 +21,6 @@ import {LocalStorageService} from './shared/services/local-storage.service';
 import {EventsService} from './shared/services/events.service';
 import {EmailService} from './shared/services/email.service';
 import {WindowRef} from './shared/directives/WindowRef';
-import {MaintenanceService} from './shared/services/maintenance.service';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AngularFireModule } from '@angular/fire';
@@ -63,7 +62,6 @@ import {environment} from '../environments/environment';
         BasketService,
         EventsService,
         EmailService,
-        MaintenanceService,
         WindowRef,
     ],
     bootstrap: [
