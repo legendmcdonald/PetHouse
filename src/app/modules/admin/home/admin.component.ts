@@ -31,14 +31,7 @@ export class AdminComponent implements OnInit {
             icon: 'pets',
             color: '#ecb52a',
         },
-        {
-            text: 'Categories',
-            url: '/admin/categories',
-            cols: 1,
-            rows: 1,
-            icon: 'category',
-            color: '#00796b',
-        }, {
+         {
             text: 'Orders',
             url: '/admin/orders',
             cols: 1,

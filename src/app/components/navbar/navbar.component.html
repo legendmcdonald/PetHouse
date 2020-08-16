@@ -12,9 +12,6 @@
         <button mat-icon-button *ngIf="productsPage" (click)="openSearch()"  matTooltip="Products Search">
             <mat-icon>search</mat-icon>
         </button>
-        <button mat-icon-button *ngIf="productsPage" (click)="openCategories()" matTooltip="Products Categories">
-            <mat-icon>menu</mat-icon>
-        </button>
 
         <button style="margin-right: 8px" mat-raised-button matTooltip="Signup" (click)="openRegisterComponent()"
                 *ngIf="!authenticationService.isAuthenticated()">

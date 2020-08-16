@@ -1,5 +1,4 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {FilterComponent} from './components/filter/filter.component';
 import {ProductsService} from '../../../shared/services/products/products.service';
 import {EventsService} from '../../../shared/services/events.service';
 import {MatDialog} from '@angular/material';
@@ -49,28 +48,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.get();
         this.calcHeight(this.winRef.nativeWindow.innerWidth);
-        this.registerFilterShowEvent();
         this.registerProductsSearchEvent();
         this.registerProductsSearchCloseEvent();
     }
 
     ngOnDestroy(): void {
-        this.unregisterFilterShowEvent();
         this.unregisterProductsSearchEvent();
         this.unregisterProductsSearchCloseEvent();
     }
-
-
-    private registerFilterShowEvent() {
-        this.eventsService.registerEvent('PRODUCTS-FILTER-SHOW', this, () => {
-            this.openFilterComponent();
-        });
-    }
-
-    private unregisterFilterShowEvent() {
-        this.eventsService.unregisterEvent('PRODUCTS-FILTER-SHOW', this);
-    }
-
     private registerProductsSearchEvent() {
         this.eventsService.registerEvent('PRODUCTS-SEARCH', this, (value) => {
             if (value instanceof Array) {
@@ -151,17 +136,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     getRowHeight() {
         return this.rowHeight + 'vw';
     }
-
-    openFilterComponent() {
-        const ref = this.dialog.open(FilterComponent, {autoFocus: true, width: '480px', data: this.filterData});
-        ref.afterClosed().subscribe(result => {
-            if (result) {
-                this.filterData = result;
-                this.filter();
-            }
-        });
-    }
-
     navigate(element) {
         this.router.navigate(['/product/' + element.id]);
     }

@@ -1,6 +1,4 @@
 <div class="app-products-container">
-    <app-products-categories (categoryChanged)="categoryChanged($event)"></app-products-categories>
-
     <div (window:resize)="onResize($event)" class="app-products">
         <mat-grid-list [gutterSize]="1" [cols]="columns" class="app-products-list"
                        rowHeight="{{getRowHeight()}}">
