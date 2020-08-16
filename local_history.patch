@@ -1,0 +1,44 @@
+Index: src/app/modules/main/product/product.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/modules/main/product/product.module.ts	(date 1597574280180)
++++ src/app/modules/main/product/product.module.ts	(date 1597574280180)
+@@ -6,14 +6,11 @@
+ import {ProductService} from '../../../shared/services/products/product.service';
+ import {ProductRoutingModule} from './product.routing.module';
+ import {MaterialModule} from '../../../material.module';
+-import {RatingComponent} from './components/rating/rating.component';
+-import {TracksComponent} from './components/tracks/tracks.component';
+-import {ProductTracksService} from '../../../shared/services/products/product-tracks.service';
++import {PetsComponent} from './components/pets/pets.component';
+ import {SharedModule} from '../../../shared.module';
+ import {BasketService} from '../../../shared/services/basket/basket.service';
+ import {LocalStorageService} from '../../../shared/services/local-storage.service';
+ import {InfoComponent} from './components/info/info.component';
+-import {ProductRatingsService} from '../../../shared/services/products/product-ratings.service';
+ 
+ 
+ @NgModule({
+@@ -26,19 +23,15 @@
+     ],
+     declarations: [
+         ProductComponent,
+-        TracksComponent,
+-        RatingComponent,
++        PetsComponent,
+         InfoComponent,
+     ],
+     providers: [
+         ProductService,
+-        ProductTracksService,
+-        ProductRatingsService,
+         LocalStorageService,
+         BasketService,
+     ],
+     exports: [
+-        RatingComponent
+     ],
+     entryComponents: []
+ })

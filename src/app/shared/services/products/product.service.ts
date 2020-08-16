@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Product} from '../../models/products/product';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {Track} from '../../models/tracks/track';
+import {Pets} from '../../models/pets/pets';
 import {map} from 'rxjs/operators';
 import {firestore} from 'firebase/app';
 
@@ -27,8 +27,8 @@ export class ProductService {
     }
 
     delete(id) {
-        // Delete tracks
-        const tracksSub = this.afs.collection<Track>('tracks',
+        // Delete pets
+        const tracksSub = this.afs.collection<Pets>('tracks',
             ref => ref.where('productId', '==', id)).snapshotChanges()
             .subscribe((next) => {
                 next.forEach(item => {

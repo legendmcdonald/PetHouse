@@ -3,7 +3,6 @@ import {Model} from '../model';
 export class Product extends Model {
     name: string;
     type: string;
-    producer: string;
     cover: string;
     price: number;
     description: string;
@@ -21,7 +20,6 @@ export class Product extends Model {
     fromDocument(document) {
         this.id = document.id;
         this.name = document.data().name;
-        this.producer = document.data().producer;
         this.type = document.data().type;
         this.price = parseInt(document.data().price, 10);
         this.cover = document.data().cover;

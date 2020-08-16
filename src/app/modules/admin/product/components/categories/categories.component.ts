@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {ItemsComponent} from '../../../../../shared/components/items/items.component';
-import {Track} from '../../../../../shared/models/tracks/track';
+import {Pets} from '../../../../../shared/models/pets/pets';
 import {ActivatedRoute} from '@angular/router';
 import {CategoriesAddComponent} from './components/add/categories-add.component';
 import {CategoriesDeleteComponent} from './components/delete/categories-delete.component';
@@ -12,7 +12,7 @@ import {ProductCategoriesService} from '../../../../../shared/services/products/
     selector: 'app-product-categories',
     templateUrl: './categories.component.html',
 })
-export class CategoriesComponent extends ItemsComponent<Track> implements OnInit {
+export class CategoriesComponent extends ItemsComponent<Pets> implements OnInit {
     displayedColumns = ['name', 'edit'];
 
     _productId = '';
