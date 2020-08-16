@@ -24,12 +24,12 @@ export class AdminComponent implements OnInit {
 
     tools: Tile[] = [
         {
-            text: 'Albums',
+            text: 'Pets',
             url: '/admin/products',
             cols: 1,
             rows: 1,
-            icon: 'library_music',
-            color: '#6a1b9a',
+            icon: 'pets',
+            color: '#ecb52a',
         },
         {
             text: 'Categories',
@@ -43,7 +43,7 @@ export class AdminComponent implements OnInit {
             url: '/admin/orders',
             cols: 1,
             rows: 1,
-            icon: 'shop',
+            icon: 'local_mall',
             color: '#bf360c',
         },
     ];
