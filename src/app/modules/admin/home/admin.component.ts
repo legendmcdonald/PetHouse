@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
 
     tools: Tile[] = [
         {
-            text: 'Albums',
+            text: 'Pets',
             url: '/admin/products',
             cols: 1,
             rows: 1,
