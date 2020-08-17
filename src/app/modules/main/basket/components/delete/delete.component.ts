@@ -1,8 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormBuilder} from '@angular/forms';
-import {CategoryService} from "../../../../../shared/services/categoreis/category.service";
-import {BasketService} from "../../../../../shared/services/basket/basket.service";
+import {BasketService} from '../../../../../shared/services/basket/basket.service';
 
 
 @Component({

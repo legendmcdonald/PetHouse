@@ -6,7 +6,7 @@ import {ComponentsModule} from '../../../components.module';
 import {AdminComponent} from './admin.component';
 import {TileComponent} from './components/tile/tile.component';
 import {ProductsService} from '../../../shared/services/products/products.service';
-import {CategoriesService} from '../../../shared/services/categoreis/categories.service';
+
 
 @NgModule({
     imports: [
@@ -21,7 +21,6 @@ import {CategoriesService} from '../../../shared/services/categoreis/categories.
     ],
     providers: [
         ProductsService,
-        CategoriesService,
     ],
     entryComponents: []
 })
