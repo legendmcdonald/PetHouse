@@ -1,7 +1,7 @@
 .app-navbar {
     filter: none;
     height: 64px;
-
+    background-color: rgb(197, 32, 32);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,6 +56,7 @@
 
 .app-navbar-dark {
     background: linear-gradient(to bottom, #fff 10%, rgba(255, 255, 255, 1) 100%);
+    
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -63,5 +64,6 @@
     font-family: 'Arvo', fantasy;
     font-size: 32px;
     font-weight: bold;
+    
 }
 
