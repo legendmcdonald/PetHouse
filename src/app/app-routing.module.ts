@@ -63,3 +63,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
 }
+// routing of pages
