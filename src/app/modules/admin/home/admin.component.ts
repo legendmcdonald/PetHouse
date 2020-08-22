@@ -28,22 +28,15 @@ export class AdminComponent implements OnInit {
             url: '/admin/products',
             cols: 1,
             rows: 1,
-            icon: 'library_music',
-            color: '#6a1b9a',
+            icon: 'pets',
+            color: '#ecb52a',
         },
-        {
-            text: 'Categories',
-            url: '/admin/categories',
-            cols: 1,
-            rows: 1,
-            icon: 'category',
-            color: '#00796b',
-        }, {
+         {
             text: 'Orders',
             url: '/admin/orders',
             cols: 1,
             rows: 1,
-            icon: 'shop',
+            icon: 'local_mall',
             color: '#bf360c',
         },
     ];
@@ -59,9 +52,4 @@ export class AdminComponent implements OnInit {
     ngOnInit(): void {
 
     }
-
-    getCounts() {
-
-    }
-
 }

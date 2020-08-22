@@ -4,7 +4,7 @@ export class Order extends Model {
     userId: string;
     createdAt: string;
     price: number;
-    albums: number;
+    pets: number;
     status: number;
 
 
@@ -19,7 +19,7 @@ export class Order extends Model {
         this.id = document.id;
         this.userId = document.data().userId;
         this.price = document.data().price;
-        this.albums = document.data().albums;
+        this.pets = document.data().pets;
         this.status = document.data().status;
         this.createdAt = document.data().createdAt != null ? document.data().createdAt.toDate().toLocaleString() : '';
     }

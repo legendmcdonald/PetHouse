@@ -20,10 +20,6 @@ const routes: Routes = [
         loadChildren: './modules/admin/home/admin.module#AdminModule',
     },
     {
-        path: 'admin/categories',
-        loadChildren: './modules/admin/categories/admin-categories.module#AdminCategoriesModule',
-    },
-    {
         path: 'admin/products',
         loadChildren: './modules/admin/products/admin-products.module#AdminProductsModule',
     },

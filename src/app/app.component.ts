@@ -1,6 +1,5 @@
 import {Component, isDevMode, OnInit} from '@angular/core';
 
-import {MaintenanceService} from './shared/services/maintenance.service';
 
 @Component({
     selector: 'app-root',
@@ -10,13 +9,11 @@ import {MaintenanceService} from './shared/services/maintenance.service';
 export class AppComponent implements OnInit {
 
     constructor(
-        private maintenanceService: MaintenanceService,
     ) {
 
     }
 
     ngOnInit(): void {
-        // this.maintenanceService.fixProductsDurationAndTracks();
     }
 
 }

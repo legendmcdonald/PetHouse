@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthenticationService} from "../../shared/services/authentication.service";
+import {AuthenticationService} from '../../shared/services/authentication.service';
 
 
 @Component({
@@ -21,9 +21,9 @@ export class RegisterComponent implements OnInit {
         @Inject(MAT_DIALOG_DATA) data) {
 
         this.form = this.fb.group({
-            'name': ['', [Validators.required, Validators.minLength(4)]],
-            'email': ['', [Validators.required, Validators.email]],
-            'password': ['', [Validators.required, Validators.minLength(4)]],
+            name: ['', [Validators.required, Validators.minLength(4)]],
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', [Validators.required, Validators.minLength(4)]],
         });
     }
 

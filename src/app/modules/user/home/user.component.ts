@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthenticationService} from "../../../shared/services/authentication.service";
+import {AuthenticationService} from '../../../shared/services/authentication.service';
 
 
 interface Tile {
@@ -26,15 +26,15 @@ export class UserComponent implements OnInit {
             url: '/user/address',
             cols: 1,
             rows: 1,
-            icon: 'local_post_office',
-            color: '#6a1b9a',
+            icon: 'home',
+            color: '#eeb408',
         },
         {
             text: 'Orders',
             url: '/user/orders',
             cols: 1,
             rows: 1,
-            icon: 'shopping_basket',
+            icon: 'local_mall',
             color: '#00796b',
         }
     ];
