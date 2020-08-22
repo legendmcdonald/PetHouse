@@ -17,12 +17,10 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {UserService} from './shared/services/user/user.service';
 import {BasketService} from './shared/services/basket/basket.service';
 import {LocalStorageService} from './shared/services/local-storage.service';
-
 import {EventsService} from './shared/services/events.service';
 import {EmailService} from './shared/services/email.service';
 import {WindowRef} from './shared/directives/WindowRef';
 import {HttpClientModule} from '@angular/common/http';
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
