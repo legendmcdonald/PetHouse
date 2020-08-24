@@ -9,6 +9,7 @@ import {SharedModule} from '../../../shared.module';
 import {ImageUploadComponent} from './components/image-upload/image-upload.component';
 import {UploadService} from '../../../shared/services/upload.service';
 import {EditComponent} from './components/edit/edit.component';
+import {MaterialModule} from '../../../material.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {EditComponent} from './components/edit/edit.component';
         CommonModule,
         SharedModule,
         AdminProductRoutingModule,
+        MaterialModule,
     ],
     declarations: [
         AdminProductComponent,

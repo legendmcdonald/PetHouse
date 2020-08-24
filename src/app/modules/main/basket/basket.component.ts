@@ -26,7 +26,7 @@ export class BasketComponent extends ItemsComponent<ProductBasket> implements On
     working = false;
 
     constructor(
-        private basketService: BasketService,
+        public basketService: BasketService,
         private ordersService: OrdersService,
         private orderDetailsService: OrderDetailsService,
         private productsService: ProductsService,

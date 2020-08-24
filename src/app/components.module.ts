@@ -7,6 +7,7 @@ import {SvgLoaderComponent} from './shared/components/svg-loader/svg-loader.comp
 import {FooterComponent} from './components/footer/footer.component';
 import {MatIconModule} from '@angular/material';
 
+
 @NgModule({
     declarations: [
         AlertComponent,
