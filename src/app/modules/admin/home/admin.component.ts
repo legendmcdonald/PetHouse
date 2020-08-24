@@ -40,6 +40,7 @@ export class AdminComponent implements OnInit {
             color: '#bf360c',
         },
     ];
+     name: string;
 
     constructor(
         private dialog: MatDialog,
@@ -50,6 +51,6 @@ export class AdminComponent implements OnInit {
     }
 
     ngOnInit(): void {
-
+      this.name = this.authenticationService.getName();
     }
 }

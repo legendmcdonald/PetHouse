@@ -41,10 +41,6 @@ import {environment} from '../environments/environment';
         MaterialModule,
         ComponentsModule,
         AppRoutingModule,
-      AngularFireModule.initializeApp(environment.firebase, 'pethouse'), // imports firebase/app needed for everything
-      AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-      AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-      AngularFireStorageModule, BrowserAnimationsModule
     ],
     declarations: [
         AppComponent,

@@ -38,15 +38,16 @@ export class UserComponent implements OnInit {
             color: '#00796b',
         }
     ];
+     name: string;
 
     constructor(
-        private authenticationService: AuthenticationService,
+      private authenticationService: AuthenticationService,
     ) {
 
     }
 
     ngOnInit(): void {
-
+      this.name = this.authenticationService.getName();
     }
 
     // ----------------------
